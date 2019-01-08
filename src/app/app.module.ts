@@ -10,8 +10,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import{HttpModule} from "@angular/http";
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { SlidePageModule } from '../pages/slide/slide.module';
+import { IonicNativePlugin } from '@ionic-native/core';
+import { MoviesPageModule } from '../pages/movies/movies.module';
+import { PopularProvider } from '../providers/popular/popular';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,9 @@ import { SlidePageModule } from '../pages/slide/slide.module';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     FeedPageModule,
-    SlidePageModule
+    SlidePageModule,
+    HttpModule,
+    MoviesPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -38,7 +44,8 @@ import { SlidePageModule } from '../pages/slide/slide.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PopularProvider
   ]
 })
 export class AppModule {}

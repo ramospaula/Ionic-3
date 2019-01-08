@@ -1,5 +1,5 @@
 <!--
-  Generated template for the FeedPage page.
+  Generated template for the MoviesPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,45 +7,45 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Feed</ion-title>
+    <ion-title>movies</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
-  <ion-card *ngFor= "let movie of list_pop">
+<ion-content padding>
+  <ion-card *ngFor= "let movie of list_favs">
 
     <ion-item>
       <ion-avatar item-start>
-        <img [src]= "'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path">
+        <img src="assets/imgs/InfinityWar.jpg">
       </ion-avatar>
-      <h2 class="feed_title">{{movie.title}}</h2>  
+      <h2 class="feed_title">{{movie.name}}</h2>  
       <p class="feed_date">{{movie.release_date}}</p>
     </ion-item>
   
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path"> 
+    <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"> 
   
     <ion-card-content>
-      <p>{{movie.overview}}</p>
+      <p> {{movie.description}}</p>
     </ion-card-content>
   
     <ion-row>
       <ion-col>
         <button ion-button icon-start clear small>
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>{{movie.vote_count}} likes</div>
+          <div>{{movie.vote_average}} nota</div>
         </button>
       </ion-col>
       <ion-col>
         <button ion-button icon-start clear small>
           <ion-icon name="text"></ion-icon>
-          <div>{{movie.vote_average}} comments</div>
+          <div>{{movie.vote_count}} nota total</div>
         </button>
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          {{movie.feed_time}} ago
+          {{movie.genre_ids}} years ago
         </ion-note>
       </ion-col>
     </ion-row>
